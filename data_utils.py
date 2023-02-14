@@ -119,9 +119,9 @@ def split(nodes_set, edges_set, flow_set, train_ratio, valid_ratio):
 
 def load_data(file_name):
     # Read from excel files
-    nodes = pd.read_csv('../data/nodes/'+file_name)[['x', 'y', 'Object']].values.astype('float32')
-    flow  = pd.read_csv('../data/flow/'+file_name).values.astype('float32')
-    edges = pd.read_csv('../data/edges/'+file_name).values
+    nodes = pd.read_csv('./data/nodes/'+file_name)[['x', 'y', 'Object']].values.astype('float32')
+    flow  = pd.read_csv('./data/flow/'+file_name).values.astype('float32')
+    edges = pd.read_csv('./data/edges/'+file_name).values
 
     # Remove nodes that are not connected to edges
     nodes = nodes[np.unique(edges), :]
@@ -167,6 +167,7 @@ def load_dataset(num_files, normalize, do_read=False, dataset_source='./dataset/
 
     logs.info('The data set contains %s instances !\n', len(file_list))
 
+
     max_value = tf.zeros((3,), dtype=tf.dtypes.float32)
     min_value = tf.zeros((3,), dtype=tf.dtypes.float32)
     # Domain boundaries
@@ -175,7 +176,11 @@ def load_dataset(num_files, normalize, do_read=False, dataset_source='./dataset/
 
     ##
     bar = progress.bar.Bar('Loading data set ', max=num_files)
-    for file_name in file_list:
+    #TODO file_list to file_list_temp
+
+    file_list_temp = ["shape.csv"]
+
+    for file_name in file_list_temp:
 
         nodes, edges, flow, min_uvp, max_uvp   = load_data(file_name)
 

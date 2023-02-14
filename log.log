@@ -6,3 +6,57 @@
 02-04 15:48:21  :Name: /physical_device:CPU:0 Type: CPU
 02-04 15:48:21  :The data set contains 2000 instances !
 
+02-14 09:54:05  :Devices in use:
+02-14 09:54:05  :Name: /physical_device:CPU:0 Type: CPU
+02-14 09:54:05  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 09:56:02  :Devices in use:
+02-14 09:56:02  :Name: /physical_device:CPU:0 Type: CPU
+02-14 09:56:02  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 09:57:48  :Devices in use:
+02-14 09:57:48  :Name: /physical_device:CPU:0 Type: CPU
+02-14 09:57:48  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 09:59:54  :Devices in use:
+02-14 09:59:54  :Name: /physical_device:CPU:0 Type: CPU
+02-14 09:59:54  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:00:35  :Devices in use:
+02-14 10:00:36  :Name: /physical_device:CPU:0 Type: CPU
+02-14 10:00:36  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:00:57  :Devices in use:
+02-14 10:00:58  :Name: /physical_device:CPU:0 Type: CPU
+02-14 10:00:58  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:00:58  :The data set contains 2000 instances !
+
+02-14 10:01:46  :Devices in use:
+02-14 10:01:46  :Name: /physical_device:CPU:0 Type: CPU
+02-14 10:01:46  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:02:08  :The data set contains 2000 instances !
+
+02-14 10:02:46  :Devices in use:
+02-14 10:02:46  :Name: /physical_device:CPU:0 Type: CPU
+02-14 10:02:46  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:02:49  :The data set contains 2000 instances !
+
+02-14 10:10:09  :Devices in use:
+02-14 10:10:10  :Name: /physical_device:CPU:0 Type: CPU
+02-14 10:10:10  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:10:12  :1 Physical GPUs, 1 Logical GPU
+02-14 10:10:12  : Visible devices must be set before GPUs have been initialized
+02-14 10:10:12  :The data set contains 2000 instances !
+
+02-14 10:14:22  :Devices in use:
+02-14 10:14:22  :Name: /physical_device:CPU:0 Type: CPU
+02-14 10:14:22  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-14 10:14:24  :1 Physical GPUs, 1 Logical GPU
+02-14 10:14:24  : Visible devices must be set before GPUs have been initialized
+02-14 10:14:24  :The data set contains 2000 instances !
+
