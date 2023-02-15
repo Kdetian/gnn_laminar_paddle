@@ -60,3 +60,33 @@
 02-14 10:14:24  : Visible devices must be set before GPUs have been initialized
 02-14 10:14:24  :The data set contains 2000 instances !
 
+02-15 22:11:07  :Devices in use:
+02-15 22:11:08  :Name: /physical_device:CPU:0 Type: CPU
+02-15 22:11:08  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-15 22:11:10  :1 Physical GPUs, 1 Logical GPU
+02-15 22:11:10  : Visible devices must be set before GPUs have been initialized
+02-15 22:11:10  :The data set contains 2000 instances !
+
+02-15 22:11:52  :(u, v, p) value range was [-0.017776977, 1.3452291]x[-0.5554192, 0.55591995]x[-0.65132684, 1.0134841] !
+Now it is mapped into [0,1]x[0,1]x[0,1] !
+02-15 22:11:52  :The dataset is loaded ! 
+
+02-15 22:11:52  :Data set is split to 1600 training set, 200 validation set and 200 test set ! 
+
+02-15 22:11:52  :Started epoch 0
+02-16 00:00:50  :Devices in use:
+02-16 00:00:51  :Name: /physical_device:CPU:0 Type: CPU
+02-16 00:00:51  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-16 00:00:52  :1 Physical GPUs, 1 Logical GPU
+02-16 00:00:52  : Visible devices must be set before GPUs have been initialized
+02-16 00:00:52  :The data set contains 2000 instances !
+
+02-16 00:01:25  :(u, v, p) value range was [-0.017776977, 1.3452291]x[-0.5554192, 0.55591995]x[-0.65132684, 1.0134841] !
+Now it is mapped into [0,1]x[0,1]x[0,1] !
+02-16 00:01:25  :The dataset is loaded ! 
+
+02-16 00:01:25  :Data set is split to 1600 training set, 200 validation set and 200 test set ! 
+
+02-16 00:01:25  :Started epoch 0

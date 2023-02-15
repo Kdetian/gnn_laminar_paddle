@@ -159,7 +159,7 @@ def load_dataset(num_files, normalize, do_read=False, dataset_source='./dataset/
             file_list = f.read().splitlines()
             file_list = file_list[:num_files]
     else:
-            file_list = os.listdir('../data/nodes/')[:num_files]
+            file_list = os.listdir('./data/nodes/')[:num_files]
 
     # Write the shapes used
     with open('./dataset/dataset_used.txt', 'w') as f:
@@ -180,7 +180,7 @@ def load_dataset(num_files, normalize, do_read=False, dataset_source='./dataset/
 
     file_list_temp = ["shape.csv"]
 
-    for file_name in file_list_temp:
+    for file_name in file_list:
 
         nodes, edges, flow, min_uvp, max_uvp   = load_data(file_name)
 
