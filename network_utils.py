@@ -80,7 +80,7 @@ class MLP(tf.keras.layers.Layer):
                                          initializer=self.initializer, trainable=True)
 
     def call(self, inputs):
-        
+        j = self.weights_1[:-1, :]
         x = tf.math.add(tf.linalg.matmul(inputs, self.weights_1[:-1, :]), self.weights_1[-1, :])
         hidden_values = tf.math.multiply(x, tf.nn.sigmoid(x))
         

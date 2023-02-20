@@ -90,3 +90,26 @@ Now it is mapped into [0,1]x[0,1]x[0,1] !
 02-16 00:01:25  :Data set is split to 1600 training set, 200 validation set and 200 test set ! 
 
 02-16 00:01:25  :Started epoch 0
+02-19 15:49:11  :Devices in use:
+02-19 15:49:11  :Name: /physical_device:CPU:0 Type: CPU
+02-19 15:49:11  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-19 15:49:12  :1 Physical GPUs, 1 Logical GPU
+02-19 15:49:12  : Visible devices must be set before GPUs have been initialized
+02-19 15:49:12  :The data set contains 2000 instances !
+
+02-19 22:33:14  :Devices in use:
+02-19 22:33:15  :Name: /physical_device:CPU:0 Type: CPU
+02-19 22:33:15  :Name: /physical_device:GPU:0 Type: GPU 
+
+02-19 22:33:16  :1 Physical GPUs, 1 Logical GPU
+02-19 22:33:16  : Visible devices must be set before GPUs have been initialized
+02-19 22:33:16  :The data set contains 2000 instances !
+
+02-19 22:33:55  :(u, v, p) value range was [-0.12674716, 1.4902635]x[-0.83437854, 0.81779635]x[-1.9049606, 1.4935236] !
+Now it is mapped into [0,1]x[0,1]x[0,1] !
+02-19 22:33:55  :The dataset is loaded ! 
+
+02-19 22:33:55  :Data set is split to 1600 training set, 200 validation set and 200 test set ! 
+
+02-19 22:33:55  :Started epoch 0
