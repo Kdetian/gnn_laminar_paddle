@@ -20,15 +20,9 @@ if __name__ == '__main__':
     del nodes_set_test, edges_set_test, flow_set_test, nodes_set, edges_set, flow_set
 
     # declare a new model
-    #my_model   = InvariantEdgeModel(edge_feature_dims, num_filters, initializer)
     my_model = InvariantEdgeModel(edge_feature_dims, num_filters, initializer)
 
-    # # warm start
-    # my_model.load_weights('./best_model/best_model')
-    # lambda1 = lambda epoch: 1.0 / (1.0 + decay_factor * epoch )
-    # scheduler = paddle.optimizer.lr.LambdaDecay(learning_rate=initial_learning_rate, lr_lambda=lambda1, verbose=True)
-    # optimizers = paddle.optimizer.Adam(learning_rate=scheduler,
-    #                                     parameters=my_model.parameters())# weight_decay=5e-4
+
 
 
     training_loss, validation_loss = training_loop(my_model,

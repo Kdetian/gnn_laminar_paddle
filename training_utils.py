@@ -29,10 +29,6 @@ def mean_absolute_error(x):
 
 
 def loss_fn(prediction, real):
-    # print("predic:")
-    # print(prediction)
-    # print("real")
-    # print(real)
     return mean_absolute_error(paddle.subtract(prediction, real))
 
 
@@ -67,7 +63,7 @@ def watch_loss(model, nodes_set, edges_set, flow_set, do_batch=False, size_batch
         loss_of_epoch += loss * n_nodes_batch  # Multiply loss by number of nodes in each batch graph
         total_nodes += n_nodes_batch
 
-    return loss_of_epoch / total_nodes
+    return loss_of_epoch / total_nodes/159672/3
 
 
 def train_model(model, epoch, nodes_set, edges_set, flow_set,shape_list, num_batch, size_batch):
@@ -98,8 +94,7 @@ def train_model(model, epoch, nodes_set, edges_set, flow_set,shape_list, num_bat
         total_nodes += n_nodes_batch
         del optim,loss_batch, outputs
 
-
-    return loss_of_epoch / total_nodes  # Divided by the total number of nodes from all batch graphs
+    return loss_of_epoch / total_nodes /(total_nodes / num_batch * 3) # Divided by the total number of nodes from all batch graphs
 
 
 def training_loop(model, epochs_num, nodes_set_train, edges_set_train, flow_set_train, nodes_set_valid, edges_set_valid,
@@ -147,9 +142,9 @@ def training_loop(model, epochs_num, nodes_set_train, edges_set_train, flow_set_
 
         if valid_loss < min(validation_loss[:-1]):
             early_stop = 0
-            paddle.save(model.state_dict(), './best_model/best_model_e{}'.format(epoch))
+            paddle.save(model.state_dict(), './best_model/best_model_e{}.pdparams'.format(epoch))
         else:
             early_stop += 1
-        if early_stop == 60:
+        if early_stop == 500:
             break
     return training_loss, validation_loss[1:]

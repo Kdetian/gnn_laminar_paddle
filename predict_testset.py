@@ -3,15 +3,10 @@ from training_utils import *
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# Load model
-best_model   = InvariantEdgeModel(edge_feature_dims, num_filters, initializer)
-best_model.load_weights('./best_model/best_model_e713')
-
 # Load dataset
-nodes_set, edges_set, flow_set = load_dataset(2000, True, do_read=True)
+nodes_set, edges_set, flow_set = load_dataset(2000, normalize=True, do_read=True, dataset_source='./dataset/dataset_toUse.txt')  # Dictionary with 2000 sample
 nodes_set_train, edges_set_train, flow_set_train, nodes_set_valid, edges_set_valid, flow_set_valid, nodes_set_test, edges_set_test, flow_set_test = split(nodes_set, edges_set, flow_set, train_ratio, valid_ratio)
-del nodes_set, edges_set, flow_set #, nodes_set_train, edges_set_train, flow_set_train, nodes_set_valid, edges_set_valid, flow_set_valid
+del nodes_set_train, edges_set_train, flow_set_train #, nodes_set_train, edges_set_train, flow_set_train, nodes_set_valid, edges_set_valid, flow_set_valid
 
 # Specify the dataset to compute the MAE
 operate_on = 'Testing'  # 'Training' 'Testing' 'Validation'
@@ -32,6 +27,20 @@ else:
 shape_list = nodes_dict.keys()
 MAE_testset = list()
 
+# Load model
+best_model   = InvariantEdgeModel(edge_feature_dims, num_filters, initializer)
+
+nodes = nodes_dict[list(shape_list)[0]]
+edges = edges_dict[list(shape_list)[0]]
+flow  = flow_dict[list(shape_list)[0]]
+
+count = count_neighbour_edges(nodes, edges)
+edge_features = paddle.mean(nodes[:,:3][edges], axis = 1)
+pred = best_model(nodes[:,:3], edges, edge_features, count)
+
+loaded_params = paddle.load("./best_model/best_model_e992.pdparams")
+best_model.set_state_dict(loaded_params)
+#start
 start = time.time()
 for shape in shape_list:
     nodes = nodes_dict[shape]
@@ -39,7 +48,7 @@ for shape in shape_list:
     flow  = flow_dict[shape]
 
     count = count_neighbour_edges(nodes, edges)
-    edge_features = tf.math.reduce_mean(tf.gather(nodes[:,:3], edges), 1)
+    edge_features = paddle.mean(nodes[:,:3][edges], axis = 1)
     pred = best_model(nodes[:,:3], edges, edge_features, count)
     MAE_testset.append(loss_fn(pred, flow).numpy())
 

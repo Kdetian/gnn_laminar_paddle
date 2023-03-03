@@ -123,10 +123,10 @@ def split(nodes_set, edges_set, flow_set, train_ratio, valid_ratio):
 
 def load_data(file_name):
     # Read from excel files
-    nodes = pd.read_csv('./data/data/dataset_shapes_gcnn/nodes/' + file_name)[['x', 'y', 'Object']].values.astype(
+    nodes = pd.read_csv('../data/data/dataset_shapes_gcnn/nodes/' + file_name)[['x', 'y', 'Object']].values.astype(
         'float32')
-    flow = pd.read_csv('./data/data/dataset_shapes_gcnn/flow/' + file_name).values.astype('float32')
-    edges = pd.read_csv('./data/data/dataset_shapes_gcnn/edges/' + file_name).values
+    flow = pd.read_csv('../data/data/dataset_shapes_gcnn/flow/' + file_name).values.astype('float32')
+    edges = pd.read_csv('../data/data/dataset_shapes_gcnn/edges/' + file_name).values
 
     # Remove nodes that are not connected to edges
     nodes = nodes[np.unique(edges), :]
@@ -154,10 +154,10 @@ def load_dataset(num_files, normalize, do_read=False, dataset_source='./dataset/
     Load num_files data from the data direction.
     : normalize: apply a channel wise normalization to the flow field (u, v, p)
     """
-    if os.path.exists('./data/data/dataset_shapes_gcnn') == False:
-        dataset_location = './data/data193545/dataset_shapes_gcnn.tar'
+    if os.path.exists('../data/data/dataset_shapes_gcnn') == False:
+        dataset_location = '../data/data193599/dataset_shapes_gcnn.tar'
         t = tarfile.open(dataset_location)
-        t.extractall(path='./data/data')
+        t.extractall(path='../data/data')
         t.close()
     nodes_set = dict()
     edges_set = dict()
